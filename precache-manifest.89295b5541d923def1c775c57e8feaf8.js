@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8d174a83dd91e2106097339d1709dde7",
+    "revision": "5430b7ad3afcada64071a9639409771a",
     "url": "​https://dvleshin.github.io/mrbitcoin​/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "​https://dvleshin.github.io/mrbitcoin​/static/css/2.5a2f7233.chunk.css"
   },
   {
-    "revision": "aaa45dcaedcb7c0dfc99",
+    "revision": "0cb74b71398a45659262",
     "url": "​https://dvleshin.github.io/mrbitcoin​/static/css/main.1aac6380.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "​https://dvleshin.github.io/mrbitcoin​/static/js/2.22250cc8.chunk.js"
   },
   {
-    "revision": "aaa45dcaedcb7c0dfc99",
-    "url": "​https://dvleshin.github.io/mrbitcoin​/static/js/main.78e0c273.chunk.js"
+    "revision": "0cb74b71398a45659262",
+    "url": "​https://dvleshin.github.io/mrbitcoin​/static/js/main.61422cf6.chunk.js"
   },
   {
     "revision": "fe18d7fdb5184986a12c",
