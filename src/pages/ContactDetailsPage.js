@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { getContactById } from '../store/actions/contactActions'
 import UserProfileImage from '../components/UserProfileImage'
+import TransferFund from '../components/TransferFund'
 
 class ContactDetailsPage extends Component {
     async componentDidMount () { 
@@ -25,6 +26,7 @@ class ContactDetailsPage extends Component {
                     <li>{this.props.contactDetails.email}</li>
                 </ul>
             </div>
+            <TransferFund contact={this.props.contactDetails}></TransferFund>
         </div>
       }
 }

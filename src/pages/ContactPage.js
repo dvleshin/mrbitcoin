@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ContactList from '../components/ContactList'
-import ContactService from '../services/ContactService'
 import ContactFilter from '../components/ContactFilter'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'

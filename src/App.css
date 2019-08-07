@@ -121,6 +121,7 @@ ul {
   font-size: 35px;
   color: #fff;
 }
+
 .filter-section {
   margin-left: 10px;
   margin-right: 40px;
@@ -164,7 +165,8 @@ ul {
 }
 
 .chart {
-  margin-left: 30px
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
 .edit-form {
@@ -172,6 +174,7 @@ ul {
   margin-left: 30px;
   margin-right: 30px;
 }
+
 .edit-form input {
   margin-bottom: 10px;
   height: 45px;
@@ -183,9 +186,11 @@ ul {
   font-size: 20px;
   outline: none;
 }
+
 .edit-form input::placeholder {
   color: #616161;
 }
+
 .edit-form button {
   width: 50%;
   color: #fff;
@@ -201,12 +206,22 @@ ul {
   margin-right: 10px;
 }
 
+.edit-form .singup-label {
+  font-size: 25px;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.signup-form {
+  padding-top: 100px;
+}
 
 .user-contact-details li:first-child {
   font-size: 40px;
   color: #EE7795;
   padding-bottom: 15px;
 }
+
 .user-contact-details li {
   font-size: 20px;
   text-align: center;
@@ -217,4 +232,54 @@ ul {
   margin: 10px 20px 10px 20px;
   font-size: 30px;
   color: #fff;
+}
+
+
+/* ---------Transfer------- */
+.transfer-form {
+  margin-top: 45px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.transfer-form span {
+  text-decoration: underline;
+  padding-left: 5px;
+}
+
+.transfer-form input {
+  height: 55px;
+  border: 0;
+  border-radius: 3px 0 0 3px;
+  padding-left: 10px;
+  background-color: #332F48;
+  color: #fff;
+  font-size: 20px;
+  outline: none;
+}
+
+.transfer-form input::placeholder {
+  color: #616161;
+}
+
+.transfer-btn {
+  color: #fff;
+  border: 0;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 0 3px 3px 0;
+  padding: 15px;
+  background: linear-gradient(45deg, rgba(238, 119, 149, 1) 0%, rgba(239, 136, 118, 1) 100%);
+}
+
+.moves-list .moves {
+  padding: 10px;
+}
+
+.moves-list .moves div {
+  margin: 5px;
+}
+.moves-list p {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
 }

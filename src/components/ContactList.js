@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import ContactPreview from './ContactPreview.js'
 
 class  ContactList extends Component{
-
-
     render(){
         return <div>
           <ul className="contact-list flex">

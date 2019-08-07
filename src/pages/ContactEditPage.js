@@ -1,29 +1,36 @@
 import React, { Component } from 'react';
-import ContactService from '../services/ContactService';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { getContactById } from '../store/actions/contactActions'
 import { deleteContact } from '../store/actions/contactActions'
+import { saveContact } from '../store/actions/contactActions'
 import UserProfileImage from '../components/UserProfileImage'
 
 class ContactEditPage extends Component {
+    state = {contactDetails: {name: "", phone:"", email:""}}
 
     async componentDidMount () {
-        const {id} = this.props.match.params
-        this.props.dispatch(getContactById(id))
+        if (this.props.match.params.id) {
+            const {id} = this.props.match.params
+            this.props.dispatch(getContactById(id))
+            .then(() => {
+                this.setState({contactDetails: this.props.contactDetails})
+            })
+        }
     }
 
     handleSubmit = async (ev) => {
-        ev.preventDefault();  
-        await ContactService.saveContact(this.props.contactDetails);
-        console.log('Form submited:', this.props.contactDetails)   
+        ev.preventDefault();
+        console.log(this.state.contactDetails);
+        
+        this.props.dispatch(saveContact(this.state.contactDetails))
         const {history} = this.props;
         history.push('/contact')
     }
 
     handleChange = (ev) => {
         let { name, value } = ev.target
-        this.setState({ contactDetails: {...this.props.contactDetails, [name]: value} });
+        this.setState({ contactDetails: {...this.state.contactDetails, [name]: value} });
     }
 
     handleDelete = async () => {
@@ -48,19 +55,19 @@ class ContactEditPage extends Component {
                     type="text" 
                     name="name"
                     onChange={this.handleChange}
-                    value={this.props.contactDetails.name}
+                    value={this.state.contactDetails.name}
                     placeholder="Name"/>
                     <input 
                     type="tel"
                     name="phone"
                     onChange={this.handleChange}
-                    value={this.props.contactDetails.phone}
+                    value={this.state.contactDetails.phone}
                     placeholder="Phone"/>
                     <input
                     type="email"
                     name="email"
                     onChange={this.handleChange}
-                    value={this.props.contactDetails.email}
+                    value={this.state.contactDetails.email}
                     placeholder="Email"/>
                     <div className="flex">
                     <button>{this.props.match.params.id ? 'SAVE' : 'ADD'}</button>

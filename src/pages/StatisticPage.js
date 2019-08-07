@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Chart from '../components/Chart'
-import BitcoinService from '../services/BitcoinService'
 import { connect } from 'react-redux'
 import { getMarketPrice } from '../store/actions/bitcoinActions'
 import { confirmedTransactionsData } from '../store/actions/bitcoinActions'
@@ -24,7 +23,7 @@ class StatisticPage extends Component {
   render(){
     return <div>
       {this.props.marketPriceData && <Chart data={this.props.marketPriceData}></Chart>}
-      {/* {this.props.confirmedTransactionsData && <Chart data={this.props.confirmedTransactionsData}></Chart>} */}
+      {this.props.confirmedTransactionsData && <Chart data={this.props.confirmedTransactionsData}></Chart>}
     </div>
   }
 }

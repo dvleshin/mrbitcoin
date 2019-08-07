@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import NoUserImg from '../assets/imgs/nouser.png'
 import StatisticPage from './StatisticPage'
 import { connect } from 'react-redux'
 import { getUser } from '../store/actions/userActions'
 import { getRate } from '../store/actions/bitcoinActions'
 import UserProfileImage from '../components/UserProfileImage'
+import MovesList from '../components/MovesList'
 
 class HomePage extends Component {
 
@@ -14,12 +14,11 @@ class HomePage extends Component {
         .then(()=>{
           dispatch(getRate(this.props.user.coins))
         })
-      // const btc = await BitcoinService.getRate()
-      // this.setState({btc})
     }
 
   render(){
     return <div>
+        {console.log('Home page:', this.props.user)}
         <section className="user-info flex flex-column">
         <UserProfileImage></UserProfileImage>
       <div className="user-name-title flex justify-center">
@@ -35,11 +34,11 @@ class HomePage extends Component {
     <section>
       <StatisticPage></StatisticPage>
     </section>
+    {this.props.user.moves && <MovesList moves={this.props.user.moves}></MovesList>}
     </div>
     
   }
 }
-
 const mapStateToProps = (state) => {
   return {
     user:state.userReducer.user,

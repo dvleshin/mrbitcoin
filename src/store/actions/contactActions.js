@@ -10,7 +10,7 @@ export const fetchData = (data, type) => {
 export const getContacts = (term = null) => {
     return (dispatch) => {
         return ContactService.getContacts(term)
-            .then(response => {                
+            .then(response => {
                 dispatch(fetchData(response, 'getContacts'))
             })
             .catch(error => {
@@ -21,25 +21,40 @@ export const getContacts = (term = null) => {
 
 export const getContactById = (id) => {
     return (dispatch) => {
-        if(id){        return ContactService.getContactById(id)
-            .then(response => {                
-                dispatch(fetchData(response, 'getContactById'))
+        if (id) {
+            return ContactService.getContactById(id)
+                .then(response => {
+                    dispatch(fetchData(response, 'getContactById'))
+                })
+                .catch(error => {
+                    throw (error);
+                });
+        } else {
+            dispatch(fetchData({
+                name: "",
+                phone: "",
+                email: ""
+            }, 'getContactById'))
+        }
+    };
+};
+
+export const saveContact = (contact) => {
+    return (dispatch) => {
+        return ContactService.saveContact(contact)
+            .then(response => {
+                dispatch(fetchData(response, 'saveContact'))
             })
             .catch(error => {
                 throw (error);
             });
-        }
-        else{
-            dispatch(fetchData({name: "", phone:"", email:""}, 'getContactById'))
-
-        }
     };
 };
 
 export const deleteContact = (id) => {
     return (dispatch) => {
         return ContactService.deleteContact(id)
-            .then(response => {                
+            .then(response => {
                 dispatch(fetchData(response, 'deleteContact'))
             })
             .catch(error => {
