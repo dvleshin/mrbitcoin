@@ -1,7 +1,3 @@
-import {
-    log
-} from "util";
-
 export default {
     getUser,
     signup,
