@@ -17,7 +17,7 @@ const PrivateRoute = props => {
 class App extends Component {
 
   render(){
-    return <div>
+    return <div class="app">
       <Router>
       <Header></Header>
         <Switch>
