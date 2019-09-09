@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {XYPlot, 
-  XAxis, 
+import {XAxis, 
   YAxis, 
   HorizontalGridLines, 
   VerticalGridLines, 
